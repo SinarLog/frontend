@@ -1,0 +1,62 @@
+/* Tailwind Init */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts: */
+/* 1. Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply bg-[#f8f8f8] dark:bg-[#13131B] min-h-screen
+}
+
+.navbar-container {
+  @apply w-full navbar bg-base-100 px-10 pt-2 sticky shadow-lg rounded-b-lg dark:bg-[#1C1C24]
+}
+
+.body-container {
+  @apply bg-white dark:bg-[#1C1C24] rounded-xl p-4
+}
+
+.body-container-no-pad {
+  @apply bg-white dark:bg-[#1C1C24] rounded-xl
+}
+
+.body-container-color {
+  @apply bg-white dark:bg-[#1C1C24]
+}
+
+.body-container-color-button {
+  @apply bg-white dark:bg-[#1C1C24] text-secondary-normal dark:text-white
+}
+
+.button-border-custom {
+  @apply border-[#d3d4d7] dark:border-[#393a44]
+}
+
+.form-background  {
+  @apply bg-[#f5f3f3] dark:bg-[#1d232a]
+}
+
+.label-red > a {
+  @apply hover:!text-primary-normal
+}
+
+.circle-outer-oops {
+  border: 0.5px solid rgba(229, 70, 70, 0.12);
+  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(0, 206, 21, 0.08) 48.10%, rgba(255, 144, 144, 0.09) 100%);
+}
+
+.circle-inner-oops-green {
+  border: 0.5px solid rgba(70, 229, 78, 0.12);
+  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(0, 206, 21, 0.08) 0%, rgba(186, 255, 144, 0.05) 100%)
+}
+
+.circle-inner-oops-warning {
+  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(0, 206, 21, 0.08) 0%, rgba(186, 255, 144, 0.05) 100%);
+}
