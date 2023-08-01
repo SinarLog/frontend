@@ -52,7 +52,7 @@ export default function WhosOnLeaveCalendarTable({
             <div className="absolute top-5 left-5 text-start">
               <h2>{item.date}</h2>
             </div>
-            <div className="flex flex-row align-middle items-center justify-start absolute bottom-5">
+            <div className="flex flex-row align-middle items-center justify-start absolute bottom-5 pe-2">
               {item.employees.length !== 0 && (
                 <div className="avatar-group -space-x-3">
                   {item.employees.map((value, index) =>

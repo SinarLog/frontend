@@ -20,7 +20,7 @@ export default function EmployeeListView() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center gap-8">
+    <div className="flex flex-col justify-center gap-8 body-container">
       <div className="flex flex-row justify-between">
         <h2 className="font-bold text-2xl self-center">
           List of {values.jobName !== "ALL" ? values.jobName : "Employees"}
