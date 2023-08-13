@@ -3,6 +3,8 @@ FROM node:16 as react-build
 WORKDIR /app
 COPY . ./
 RUN yarn install
+ARG BACKEND_URL
+RUN echo "REACT_APP_BACKEND_URL=$BACKEND_URL" > .env.production
 RUN yarn build
 
 # server environment
