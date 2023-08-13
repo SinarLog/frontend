@@ -11,6 +11,7 @@ import NavBar from "../../components/navbar/NavBar";
 // Views
 import UnauthorizedView from "../4xx/401View";
 import OoopsView from "../4xx/OopsView";
+import ChatView from "./chat/ChatView";
 
 function BaseDomainView() {
   const { verify } = useContext(AuthContext);
@@ -31,6 +32,7 @@ function BaseDomainView() {
             <div className="p-10">
               <Outlet />
             </div>
+            <ChatView />
           </div>
 
           {/* MIN-WIDTH ERROR */}

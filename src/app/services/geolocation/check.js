@@ -8,8 +8,6 @@ export async function checkGeolocationEnabled() {
       if ("getCurrentPosition" in navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           function (position) {
-            console.log("Latitude: ", position.coords.latitude);
-            console.log("Longitude: ", position.coords.longitude);
             resolve(position != null);
           },
           function (err) {

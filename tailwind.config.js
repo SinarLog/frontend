@@ -26,6 +26,9 @@ module.exports = {
           "100%": { transform: "scale(0.9)", opacity: 0 },
         },
       },
+      transitionProperty: {
+        dimension: "width, height",
+      },
     },
   },
   daisyui: {
