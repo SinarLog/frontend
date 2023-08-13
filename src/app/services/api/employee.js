@@ -1,4 +1,4 @@
-import api, { defaultPaginationSize } from ".";
+import api from ".";
 
 export const postCreateNewEmployee = async (data) => {
   try {
@@ -24,9 +24,7 @@ export const getManagersList = async () => {
  */
 export const getAllEmployees = async (query) => {
   try {
-    const res = await api.get(
-      `/hr/employees?fullName=${query.fullName}&jobId=${query.jobId}&size=${defaultPaginationSize}&page=${query.page}&sort=${query.sort}`
-    );
+    const res = await api.get(`/hr/employees`, { params: query });
     return res;
   } catch (err) {
     throw err;

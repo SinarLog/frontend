@@ -87,6 +87,17 @@ export const ROLE_CODE_NAME_MAPPER = {
   staff: "Staff",
 };
 
+export const DUMMY_FRIENDS = [
+  { id: 1, fullName: "Rifky Manuel Satyana", avatar: undefined },
+  { id: 2, fullName: "Muhammad Ghani", avatar: undefined },
+  { id: 3, fullName: "Dani Irwansyah", avatar: undefined },
+  { id: 4, fullName: "Alya Mirzani", avatar: undefined },
+  { id: 5, fullName: "Johny Deep", avatar: undefined },
+  { id: 6, fullName: "Lukaku Cassilas", avatar: undefined },
+  { id: 7, fullName: "Fadli Ashyari", avatar: undefined },
+  { id: 8, fullName: "Hooh Haha", avatar: undefined },
+];
+
 export const WHAT_CHANGED_MAPPER = {
   status: {
     AVAILABLE: "Available",

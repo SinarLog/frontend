@@ -1,5 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { userSlice, themeSlice, authSlice } from "./slices";
+import {
+  userSlice,
+  themeSlice,
+  authSlice,
+  friendsSlice,
+  chatsSlice,
+} from "./slices";
 import { saveCurrentUser, saveTheme } from "./helpers";
 
 /**
@@ -10,6 +16,8 @@ const store = configureStore({
     currentUser: userSlice.reducer,
     theme: themeSlice.reducer,
     auth: authSlice.reducer,
+    friends: friendsSlice.reducer,
+    chats: chatsSlice.reducer,
   },
 });
 

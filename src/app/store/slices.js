@@ -39,6 +39,9 @@ const userSlice = createSlice({
 export const { setCurrentUser } = userSlice.actions;
 export { userSlice };
 
+/**
+ * themeSlice is used to set themes.
+ */
 const themeSlice = createSlice({
   name: "theme",
   initialState: loadTheme() ?? "light",
@@ -79,3 +82,69 @@ const authSlice = createSlice({
 
 export const { setUnauthorized } = authSlice.actions;
 export { authSlice };
+
+/**
+ * Friends list for chat feature
+ */
+const friendsSlice = createSlice({
+  name: "friends",
+  initialState: [],
+  reducers: {
+    setFriends: (state, action) => {
+      state = action.payload;
+      return state;
+    },
+  },
+});
+
+export const { setFriends } = friendsSlice.actions;
+export { friendsSlice };
+
+/**
+ * @typedef {Object} Chat
+ * @property {string} id
+ * @property {string} roomId
+ * @property {string} sender
+ * @property {string} message
+ * @property {boolean} read
+ * @property {string} sentAt
+ * @property {number} timestamp
+ */
+
+const chatsSlice = createSlice({
+  name: "chats",
+  initialState: [],
+  reducers: {
+    /**
+     * @param {Array<{roomId: string, chats: unknown}>} state
+     * @param {{type: string, payload: {roomId: string, chats: Chat}}} action
+     */
+    setRoomChat: (state, action) => {
+      const room = state.find((item) => item.roomId === action.payload.roomId);
+
+      if (room) {
+        return state;
+      }
+
+      const data = {
+        roomId: action.payload.roomId,
+        chats: action.payload.chats,
+      };
+
+      state.push(data);
+    },
+
+    /**
+     * @param {Array<{roomId: string, chats: unknown}>} state
+     * @param {{type: string, payload: Chat}} action
+     */
+    appendChat: (state, action) => {
+      const room = state.find((item) => item.roomId === action.payload.roomId);
+
+      room.chats.push(action.payload.chat);
+    },
+  },
+});
+
+export const { setRoomChat, appendChat } = chatsSlice.actions;
+export { chatsSlice };
