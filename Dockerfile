@@ -2,10 +2,10 @@
 FROM node:16 as react-build
 WORKDIR /app
 COPY . ./
-RUN yarn install
+RUN npm install
 ARG BACKEND_URL
 RUN echo "REACT_APP_BACKEND_URL=$BACKEND_URL" > .env.production
-RUN yarn build
+RUN npm run build
 
 # server environment
 FROM nginx:alpine
