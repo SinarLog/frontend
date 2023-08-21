@@ -1,0 +1,13 @@
+version: "3.0"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: dev.dockerfile
+    container_name: sinarlog-frontend
+    image: sinarlog-frontend
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/sinarlog-frontend
